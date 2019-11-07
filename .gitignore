@@ -5,3 +5,6 @@ env/
 logs/
 migrations/
 *.pyc
+app/translations/
+*.po
+*.pot
