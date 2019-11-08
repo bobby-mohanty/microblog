@@ -1,13 +1,3 @@
-A micro blog
+# Welcome to Microblog!
 
-
-to generate language packs run
-
-  (venv) $ pybabel extract -F babel.cfg -k _l -o messages.pot .
-
-to generate the '.pot' (portable object template) file
-and then run
-
-  (venv) $ pybabel init -i messages.pot -d app/translations -l es
-
-to generate the language catalog
+This is an example application featured in my [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). See the tutorial for instructions on how to work with it.
