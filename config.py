@@ -22,3 +22,6 @@ class Config(object):
     ADMINS = ['no-reply@yahoo.com']
     POSTS_PER_PAGE = 25
     LANGUAGES = ['en', 'es']
+    MS_TRANSLATOR_KEY = os.environ.get("MS_TRANSLATOR_KEY", "05173a07bd024685b5d70e0849bbbb47")
+    # MS_TRANSLATOR_KEY="05173a07bd024685b5d70e0849bbbb47"
+    # MS_TRANSLATOR_ENDPOINT="https://translator101.cognitiveservices.azure.com/sts/v1.0/issuetoken"
