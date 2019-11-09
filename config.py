@@ -26,3 +26,4 @@ class Config(object):
     MS_TRANSLATOR_KEY = os.environ.get("MS_TRANSLATOR_KEY", "05173a07bd024685b5d70e0849bbbb47")
     # MS_TRANSLATOR_KEY="05173a07bd024685b5d70e0849bbbb47"
     # MS_TRANSLATOR_ENDPOINT="https://translator101.cognitiveservices.azure.com/sts/v1.0/issuetoken"
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL', r"http://localhost:9200")
