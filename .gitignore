@@ -36,9 +36,7 @@ nosetests.xml
 .pydevproject
 
 env/
-app.db
 microblog.log*
-migrations/
 .idea
 __pycache__/
 */__pycache__/*
