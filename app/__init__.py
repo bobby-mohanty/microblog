@@ -9,6 +9,7 @@ from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
+from flask_cors import CORS
 from elasticsearch import Elasticsearch
 from config import Config
 
@@ -26,6 +27,7 @@ babel = Babel()
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
+    CORS(app)
 
     db.init_app(app)
     migrate.init_app(app, db)
