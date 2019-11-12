@@ -4,15 +4,14 @@ from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
-
+# Default database config
+default_db = 'sqlite:///' + os.path.join(basedir, 'app.db')
 
 class Config(object):
     """This class contains configs for the flask app."""
 
     SECRET_KEY = os.environ.get('SECRET_KEY', str(uuid.uuid1()))
-
     # Database config
-    default_db = 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', default_db)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'localhost')
@@ -28,3 +27,4 @@ class Config(object):
     # MS_TRANSLATOR_ENDPOINT="https://translator101.cognitiveservices.azure.com/sts/v1.0/issuetoken"
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL', r"http://localhost:9200")
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+    SERVER_NAME = "localhost:5000"
