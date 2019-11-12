@@ -6,7 +6,7 @@ from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
 from app.main.forms import EditProfileForm, PostForm, SearchForm
-from app.models import User, Post
+from app.models import Users, Post
 from app.translate import translate
 from app.main import bp
 
@@ -65,7 +65,7 @@ def explore():
 @bp.route('/user/<username>')
 @login_required
 def user(username):
-    user = User.query.filter_by(username=username).first_or_404()
+    user = Users.query.filter_by(username=username).first_or_404()
     page = request.args.get('page', 1, type=int)
     posts = user.posts.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
@@ -97,7 +97,7 @@ def edit_profile():
 @bp.route('/follow/<username>')
 @login_required
 def follow(username):
-    user = User.query.filter_by(username=username).first()
+    user = Users.query.filter_by(username=username).first()
     if user is None:
         flash(_('User %(username)s not found.', username=username))
         return redirect(url_for('main.index'))
@@ -113,7 +113,7 @@ def follow(username):
 @bp.route('/unfollow/<username>')
 @login_required
 def unfollow(username):
-    user = User.query.filter_by(username=username).first()
+    user = Users.query.filter_by(username=username).first()
     if user is None:
         flash(_('User %(username)s not found.', username=username))
         return redirect(url_for('main.index'))
