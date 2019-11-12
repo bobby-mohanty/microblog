@@ -27,4 +27,3 @@ class Config(object):
     # MS_TRANSLATOR_ENDPOINT="https://translator101.cognitiveservices.azure.com/sts/v1.0/issuetoken"
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL', r"http://localhost:9200")
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
-    SERVER_NAME = "localhost:5000"
