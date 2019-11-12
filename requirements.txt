@@ -32,7 +32,7 @@ urllib3==1.22
 visitor==0.1.3
 Werkzeug==0.14.1
 WTForms==2.1
-pyenchant==2.0.0
+pyenchant==1.6.6
 elasticsearch==7.0.5
 gunicorn==20.0.0
 psycopg2==2.8.4
