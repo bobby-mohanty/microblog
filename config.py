@@ -10,7 +10,7 @@ default_db = 'sqlite:///' + os.path.join(basedir, 'app.db')
 class Config(object):
     """This class contains configs for the flask app."""
 
-    SECRET_KEY = os.environ.get('SECRET_KEY', str(uuid.uuid1()))
+    SECRET_KEY = os.environ.get('SECRET_KEY', "sitesecretkey")
     # Database config
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', default_db)
     SQLALCHEMY_TRACK_MODIFICATIONS = False

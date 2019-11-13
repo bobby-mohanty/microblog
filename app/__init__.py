@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
-from flask_wtf import CSRFProtect
+from flask_wtf import CsrfProtect
 from flask import Flask, request, current_app
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -84,7 +84,7 @@ def create_app(config_class=Config):
         app.logger.info('Microblog startup')
 
     CORS(app)
-    CSRFProtect(app)
+    CsrfProtect(app)
 
     return app
 
