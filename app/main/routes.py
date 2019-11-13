@@ -1,6 +1,6 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from flask import render_template, flash, redirect, url_for, request, g, \
-    jsonify, current_app
+    jsonify, current_app, session
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
@@ -13,6 +13,8 @@ from app.main import bp
 
 @bp.before_app_request
 def before_request():
+    session.permanent = True
+    current_app.permanent_session_lifetime = timedelta(minutes=2)
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()

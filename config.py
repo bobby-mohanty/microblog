@@ -1,5 +1,4 @@
 import os
-import uuid
 from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -10,7 +9,7 @@ default_db = 'sqlite:///' + os.path.join(basedir, 'app.db')
 class Config(object):
     """This class contains configs for the flask app."""
 
-    SECRET_KEY = os.environ.get('SECRET_KEY', "sitesecretkey")
+    SECRET_KEY = os.environ.get('SECRET_KEY', "63021812-05e9-11ea-8198-b0c0901ca210")
     # Database config
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', default_db)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
